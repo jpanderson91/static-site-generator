@@ -5,7 +5,10 @@
 def main():
     from textnode import TextNode
     from textnode import Bender
-    
+    from copy import copy_static_to_public
+
+    copy_static_to_public()
+
     node = TextNode("This is some anchor text", Bender.WATER_BENDER, "https://www.boot.dev")
     print(node)
 

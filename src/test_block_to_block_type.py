@@ -1,5 +1,5 @@
 import unittest
-from textnode import BlockType
+from markdown_to_blocks import BlockType
 from block_to_block_type import block_to_block_type
 
 
@@ -48,7 +48,7 @@ class TestBlockToBlockType(unittest.TestCase):
 
     # Unordered list
     def test_unordered_list(self):
-        self.assertEqual(block_to_block_type("- one\n- two\n- three"), BlockType.UNORDERED_LIST)
+        self.assertEqual(block_to_block_type("- one\n- two\n- three"), BlockType.ULIST)
 
     def test_unordered_list_no_space_is_paragraph(self):
         self.assertEqual(block_to_block_type("-no space"), BlockType.PARAGRAPH)
@@ -58,7 +58,7 @@ class TestBlockToBlockType(unittest.TestCase):
 
     # Ordered list
     def test_ordered_list(self):
-        self.assertEqual(block_to_block_type("1. first\n2. second\n3. third"), BlockType.ORDERED_LIST)
+        self.assertEqual(block_to_block_type("1. first\n2. second\n3. third"), BlockType.OLIST)
 
     def test_ordered_list_starts_at_2_is_paragraph(self):
         self.assertEqual(block_to_block_type("2. first\n3. second"), BlockType.PARAGRAPH)

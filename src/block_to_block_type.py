@@ -1,5 +1,6 @@
 import re
-from textnode import BlockType
+from markdown_to_blocks import BlockType
+
 
 def block_to_block_type(text):
     lines = text.splitlines()
@@ -14,9 +15,9 @@ def block_to_block_type(text):
         return BlockType.QUOTE
         
     if all(line.startswith("- ") for line in lines):
-        return BlockType.UNORDERED_LIST
+        return BlockType.ULIST
         
     if all(line.startswith(f"{i}. ") for i, line in enumerate(lines, 1)):
-        return BlockType.ORDERED_LIST
+        return BlockType.OLIST
         
     return BlockType.PARAGRAPH
