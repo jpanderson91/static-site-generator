@@ -6,10 +6,10 @@ def main():
     from textnode import TextNode
     from textnode import Bender
     from copy import copy_static_to_public
-    from generate_page import generate_page
+    from generate_pages_recursive import generate_pages_recursive
 
     copy_static_to_public()
-    generate_page("content/index.md", "template.html", "public/index.html")
+    generate_pages_recursive("content", "template.html", "public")
 
     node = TextNode("This is some anchor text", Bender.WATER_BENDER, "https://www.boot.dev")
     print(node)
