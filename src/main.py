@@ -6,8 +6,10 @@ def main():
     from textnode import TextNode
     from textnode import Bender
     from copy import copy_static_to_public
+    from generate_page import generate_page
 
     copy_static_to_public()
+    generate_page("content/index.md", "template.html", "public/index.html")
 
     node = TextNode("This is some anchor text", Bender.WATER_BENDER, "https://www.boot.dev")
     print(node)
