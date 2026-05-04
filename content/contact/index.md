@@ -1,9 +1,7 @@
 # Contact the Author
 
-[< Back Home](/)
+I'd love to hear from fellow Tolkien fans!
 
-Give me a call anytime to chat about Tolkien!
+You can reach me at `555-867-5309` or send a raven.
 
-`555-555-5555`
-
-**"Váya márië."**
+[Back to home](/)
