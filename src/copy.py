@@ -40,9 +40,9 @@ def copy_directory_recursive(src_dir, dest_dir):
         else:
             copy_file(src_path, dest_path)
 
-# Entry point: clears the public directory, then copies everything from static into it
-def copy_static_to_public(static_dir="static", public_dir="public"):
-    """Copy all contents from static directory to public directory."""
+# Entry point: clears the docs directory, then copies everything from static into it
+def copy_static_to_public(static_dir="static", public_dir="docs"):
+    """Copy all contents from static directory to docs directory."""
     logging.basicConfig(level=logging.INFO)
     clear_directory(public_dir)
     os.makedirs(public_dir, exist_ok=True)
