@@ -3,15 +3,15 @@
 # Print the object, and make sure it looks like you'd expect. For example:
 # TextNode(This is some anchor text, link, https://www.boot.dev)
 def main():
+    import sys
     from textnode import TextNode
     from textnode import Bender
     from copy import copy_static_to_public
     from generate_pages_recursive import generate_pages_recursive
 
-    copy_static_to_public()
-    generate_pages_recursive("content", "template.html", "public")
+    basepath = sys.argv[1] if len(sys.argv) > 1 else "/"
 
-    node = TextNode("This is some anchor text", Bender.WATER_BENDER, "https://www.boot.dev")
-    print(node)
+    copy_static_to_public()
+    generate_pages_recursive("content", "template.html", "docs", basepath)
 
 main()

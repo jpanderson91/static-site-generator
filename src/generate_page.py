@@ -11,7 +11,7 @@ from markdown_to_blocks import markdown_to_html_node
 from extract_title import extract_title
 
 import os
-def generate_page(from_path, template_path, dest_path):
+def generate_page(from_path, template_path, dest_path, basepath="/"):
     print(f"Generating page from {from_path} to {dest_path} using {template_path}")
     with open(from_path, 'r') as f:
         markdown_content = f.read()
@@ -25,6 +25,9 @@ def generate_page(from_path, template_path, dest_path):
 
     final_content = template_content.replace('{{ Title }}', title)
     final_content = final_content.replace('{{ Content }}', html_content)
+    # Replace root-relative paths with the configured basepath
+    final_content = final_content.replace('href="/', f'href="{basepath}')
+    final_content = final_content.replace('src="/', f'src="{basepath}')
 
     dest_dir = os.path.dirname(dest_path)
     if dest_dir:
